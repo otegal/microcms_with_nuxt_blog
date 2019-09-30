@@ -82,11 +82,17 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import axios from 'axios'
 
 export default {
   components: {
     Logo,
     VuetifyLogo
+  },
+  async asyncData () {
+    let { data } = await axios.get('https://hhcompose.microcms.io/api/v1/posts', {
+      headers: {"X-API-KEY": process.env.MICRO_CMS_X_API_KEY }
+    })
   }
 }
 </script>
