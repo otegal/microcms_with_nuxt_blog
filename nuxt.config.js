@@ -1,3 +1,4 @@
+require('dotenv').config();
 import colors from 'vuetify/es5/util/colors'
 
 export default {
@@ -5,6 +6,9 @@ export default {
   /*
   ** Headers of the page
   */
+  env: {
+    MICRO_CMS_X_API_KEY: process.env.MICRO_CMS_X_API_KEY
+  },
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
@@ -44,6 +48,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/dotenv',
   ],
   /*
   ** Axios module configuration
