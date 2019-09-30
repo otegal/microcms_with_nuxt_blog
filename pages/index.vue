@@ -5,6 +5,7 @@
     align-center
   >
     <div v-for="content in contents" :key="content.id">
+      <h1>id: {{ content.id }}</h1>
       <p>title: {{ content.title }}</p>
       <p>body: <span v-html="content.body"></span></p>
       <p>publishedAt: {{ content.publishedAt }} </p>
