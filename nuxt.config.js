@@ -1,7 +1,11 @@
+require('dotenv').config();
 import colors from 'vuetify/es5/util/colors'
 
 export default {
   mode: 'spa',
+  env: {
+    MICRO_CMS_X_API_KEY: process.env.MICRO_CMS_X_API_KEY
+  },
   /*
   ** Headers of the page
   */
@@ -44,6 +48,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/dotenv',
   ],
   /*
   ** Axios module configuration
@@ -58,7 +63,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
