@@ -3,12 +3,12 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   mode: 'spa',
-  /*
-  ** Headers of the page
-  */
   env: {
     MICRO_CMS_X_API_KEY: process.env.MICRO_CMS_X_API_KEY
   },
+  /*
+  ** Headers of the page
+  */
   head: {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
@@ -63,7 +63,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
