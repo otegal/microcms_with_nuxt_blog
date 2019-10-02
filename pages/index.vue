@@ -5,18 +5,19 @@
     align-center
   >
     <div v-for="post in posts" :key="post.id">
-      <h1>id: {{ post.id }}</h1>
-      <p>title: {{ post.title }}</p>
-      <p>body: <span v-html="post.body"></span></p>
-      <p>publishedAt: {{ post.publishedAt }} </p>
+    <postDetail :post="post"/>
     </div>
   </v-layout>
 </template>
 
 <script>
 import axios from 'axios'
+import postDetail from '@/components/postDetail'
 
 export default {
+  components: {
+    postDetail
+  },
   async asyncData ({store}) {
     if (store.getters['posts'].length) {
       return
