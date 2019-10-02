@@ -12,10 +12,9 @@
     </v-img>
 
     <v-card-text>
-      <span>{{ post.publishedAt }}</span><br>
+      <span>{{ post.publishedAt | jstDateTime }}</span><br>
       <span class="text--primary">
-        <span>hugahuga</span><br>
-        <span>Whitsunday Island, Whitsunday Islands</span>
+        <span>なんかかく</span>
       </span>
     </v-card-text>
 
@@ -37,9 +36,16 @@
 </template>
 
 <script>
+import moment from 'moment-timezone'
+
 export default {
   props: [
     'post'
-  ]
+  ],
+  filters: {
+    jstDateTime (date) {
+      return moment(date).format('YYYY-MM-DD HH:mm:ss')
+    }
+  }
 }
 </script>
